@@ -1,0 +1,4 @@
+
+The login page asks for email and password.
+An admin logs in, the LoginSubmit sends the email and password to AuthAdmin to check if current user is an admin. Then it takes the admin that logged in to AdminControlled and executes the updateProduct method in order to update the product. The updateProduct finds the product by id and creates a form based on the product class. At the end the render method passes the form as a parameter.
+

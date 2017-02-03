@@ -1,0 +1,51 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+
+#######################
+# Puvlic Site  Routes #
+#######################
+GET     /                       controllers.HomeController.index()
+
+GET     /about                  controllers.HomeController.about
+
+# products accepts a parameter default to 0 (Long)
+GET     /products               controllers.HomeController.products(cat:Long ?=0L)
+
+
+################
+# Admin Routes #
+################
+# products accepts a parameter default to 0 (Long)
+GET     /admin/products               controllers.AdminController.products(cat:Long ?=0L)
+
+# Request to load the add product form
+GET     /admin/addproduct                  controllers.AdminController.addProduct
+
+# Data submitted by the form
+POST    /admin/addProductSubmit            controllers.AdminController.addProductSubmit
+
+# Delete a product by an id passed as a parameter
+GET    /admin/delProduct/:id               controllers.AdminController.deleteProduct(id: Long)
+
+# Update a product by id
+GET	    /admin/updateProduct/:id        controllers.AdminController.updateProduct(id: Long)
+
+################
+# Login routes #
+################
+GET     /login                       controllers.security.LoginController.login
+POST    /loginSubmit                 controllers.security.LoginController.loginSubmit
+GET     /logout                      controllers.security.LoginController.logout
+
+
+
+# An example controller showing how to use dependency injection
+GET     /count                       controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                     controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,15 @@
+@(user: models.users.User)
+
+<!-- Pass page title, user, and content {html between braces} to the main view -->
+@main("Home", user) {
+  <!-- HTML content for the index view -->
+  <div class="row">
+      <div class="col-sm-12">
+        <div class="well">
+          <h4>Home Page</h4>
+        </div>
+      </div>
+  </div>
+  <!-- End of content for main -->
+}
+
